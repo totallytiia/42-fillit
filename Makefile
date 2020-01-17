@@ -6,7 +6,7 @@
 #    By: tlaukkan <tlaukkan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/14 11:36:53 by jpartane          #+#    #+#              #
-#    Updated: 2020/01/14 15:31:40 by tlaukkan         ###   ########.fr        #
+#    Updated: 2020/01/16 17:29:24 by jpartane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ CC_FLAGS = -Wall -Wextra -Werror
 SRC_PATH = ./srcs/
 INC_PATH = ./includes/
 OBJ_PATH = ./obj/
-LFT_PATH = ./libft/
+LFT_PATH = ./libft/ 
 
 SRC = $(addprefix $(SRC_PATH),$(SRC_NAME))
 OBJ = $(addprefix $(OBJ_PATH),$(OBJ_NAME))
@@ -33,7 +33,7 @@ INC = $(addprefix -I,$(INC_PATH))
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
-INC_NAME = fillit.h\
+INC_NAME = fillit.h
 
 SRC_NAME = fillit.c map.c validate.c solver.c identify.c shapes.c
 
@@ -49,7 +49,7 @@ $(NAME): $(OBJ)
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 		@mkdir -p $(OBJ_PATH)
-		@$(CC) $(CC_FLAGS) $(INC) -o $@ -c $<
+		@$(CC) $(CC_FLAGS) $(INC) -o $@ -c $< -I ./libft
 		@echo -n =
 
 clean:

@@ -6,7 +6,7 @@
 /*   By: tlaukkan <tlaukkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 12:19:13 by tlaukkan          #+#    #+#             */
-/*   Updated: 2020/01/16 11:18:10 by tlaukkan         ###   ########.fr       */
+/*   Updated: 2020/01/17 12:58:21 by tlaukkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,8 +140,5 @@ void	solver(t_tetr *tetris, int size)
 		solver(tetris, tetris->size + 1);
 	}
 	else
-	{
 		map_printer(tetris->map);
-		clean(tetris->map);
-	}
 }

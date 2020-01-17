@@ -6,7 +6,7 @@
 /*   By: tlaukkan <tlaukkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 12:21:37 by tlaukkan          #+#    #+#             */
-/*   Updated: 2020/01/16 11:28:05 by tlaukkan         ###   ########.fr       */
+/*   Updated: 2020/01/17 12:58:50 by tlaukkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	map_printer(char **map)
 	i = 0;
 	while (map[i])
 		ft_putendl(map[i++]);
+	exit(0);
 }
 
 void	clean(char **map)
@@ -56,6 +57,8 @@ void	clean(char **map)
 	int i;
 
 	i = 0;
+	if (!map)
+		return ;
 	while (map[i])
 	{
 		ft_strdel(&map[i]);

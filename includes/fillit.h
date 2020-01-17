@@ -6,7 +6,7 @@
 /*   By: tlaukkan <tlaukkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 10:15:48 by tlaukkan          #+#    #+#             */
-/*   Updated: 2020/01/16 11:20:13 by tlaukkan         ###   ########.fr       */
+/*   Updated: 2020/01/16 17:29:21 by jpartane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FILLIT_H
 
 # include <fcntl.h>
-# include "../libft/libft.h"
+# include "libft.h"
 # define BUFF_SIZE 546
 
 typedef	struct	s_tetr
