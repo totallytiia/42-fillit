@@ -6,7 +6,7 @@
 /*   By: tlaukkan <tlaukkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 11:26:35 by tlaukkan          #+#    #+#             */
-/*   Updated: 2020/01/16 10:58:06 by tlaukkan         ###   ########.fr       */
+/*   Updated: 2020/01/17 14:53:41 by tlaukkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static int	check_valid(char *file, int dots, int hash)
 	return (0);
 }
 
-char		**save_blocks(t_tetr *tetris)
+int		save_blocks(t_tetr *tetris)
 {
 	int i;
 	int l;
@@ -68,7 +68,7 @@ char		**save_blocks(t_tetr *tetris)
 	while (tetris->file[i] && x < tetris->bc)
 	{
 		l = 0;
-		if (!(tetris->block[x] = (char *)malloc(sizeof(char) * 17)))
+		if (!(tetris->block[x] = (char *)malloc(sizeof(char) * 16 + 1)))
 			return (0);
 		while (l < 17)
 		{
@@ -81,12 +81,13 @@ char		**save_blocks(t_tetr *tetris)
 			return (0);
 		x++;
 	}
-	return (tetris->block);
+	tetris->block[x] = NULL;
+	return (1);
 }
 
 int			validate(t_tetr *tetris)
 {
-	if (!(tetris->block = save_blocks(tetris)))
+	if (!(save_blocks(tetris)))
 		return (0);
 	return (1);
 }

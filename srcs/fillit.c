@@ -6,12 +6,12 @@
 /*   By: tlaukkan <tlaukkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 10:08:13 by tlaukkan          #+#    #+#             */
-/*   Updated: 2020/01/17 12:47:37 by tlaukkan         ###   ########.fr       */
+/*   Updated: 2020/01/17 15:50:40 by tlaukkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
-
+#include <stdlib.h>
 /*
 **	Function counts the number of the blocks and checks correct positions
 **	of newlines.
@@ -74,6 +74,10 @@ static int		start_with(int fd)
 	if (!(identify(tetris)))
 		return (0);
 	solver(tetris, map_size(tetris->hash));
+	ft_strdel(&tetris->file);
+	clean(tetris->block);
+	clean(tetris->shapes);
+	free(tetris);
 	return (1);
 }
 
@@ -87,11 +91,11 @@ int				main(int ac, char **av)
 		if (!(start_with(fd)))
 		{
 			ft_putendl("error");
-			exit(0);
 		}
 		close(fd);
 	}
 	else
 		ft_putendl("usage:	./fillit source_file");
+	system("leaks fillit");
 	return (0);
 }

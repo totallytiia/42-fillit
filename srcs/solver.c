@@ -6,7 +6,7 @@
 /*   By: tlaukkan <tlaukkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 12:19:13 by tlaukkan          #+#    #+#             */
-/*   Updated: 2020/01/17 12:58:21 by tlaukkan         ###   ########.fr       */
+/*   Updated: 2020/01/17 14:52:26 by tlaukkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,13 @@ int		find_block(t_tetr *tetris, char *block, int x, int y)
 	return (1);
 }
 
+/*
+**	
+**	
+**	
+**	
+*/
+
 int		place_it(t_tetr *tetris, char **block, int index)
 {
 	int x;
@@ -140,5 +147,8 @@ void	solver(t_tetr *tetris, int size)
 		solver(tetris, tetris->size + 1);
 	}
 	else
+	{
 		map_printer(tetris->map);
+		clean(tetris->map);
+	}
 }

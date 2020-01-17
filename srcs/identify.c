@@ -6,7 +6,7 @@
 /*   By: tlaukkan <tlaukkan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 14:46:52 by tlaukkan          #+#    #+#             */
-/*   Updated: 2020/01/16 11:20:29 by tlaukkan         ###   ########.fr       */
+/*   Updated: 2020/01/17 14:51:25 by tlaukkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ int		identify(t_tetr *tetris)
 		give_letter(tetris->shapes[i], tetris->c++);
 		i++;
 	}
+	tetris->shapes[i] = NULL;
 	return (1);
 }
