@@ -3,21 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tlaukkan <tlaukkan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tlaukkan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 10:08:13 by tlaukkan          #+#    #+#             */
-/*   Updated: 2020/01/17 15:50:40 by tlaukkan         ###   ########.fr       */
+/*   Updated: 2020/01/18 10:06:27 by tlaukkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
-#include <stdlib.h>
-/*
-**	Function counts the number of the blocks and checks correct positions
-**	of newlines.
-*/
 
-static char		block_counter(char *file)
+char		block_counter(char *file)
 {
 	int	count;
 	int	i;
@@ -37,13 +32,7 @@ static char		block_counter(char *file)
 	return (count);
 }
 
-/*
-**	Reads the file. BUZZ_SIZE is 546. Max lenght for the file is 545 characters.
-**	If read returns 546 the file is too long and it returns 0.
-**	Duplicates buf in to the file.
-*/
-
-static char		*file_reader(int fd)
+char		*file_reader(int fd)
 {
 	char	buf[BUFF_SIZE + 1];
 	int		ret;
@@ -58,7 +47,7 @@ static char		*file_reader(int fd)
 	return (file);
 }
 
-static int		start_with(int fd)
+int		start_with(int fd)
 {
 	t_tetr	*tetris;
 
@@ -96,6 +85,5 @@ int				main(int ac, char **av)
 	}
 	else
 		ft_putendl("usage:	./fillit source_file");
-	system("leaks fillit");
 	return (0);
 }

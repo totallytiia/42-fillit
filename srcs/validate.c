@@ -3,20 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   validate.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tlaukkan <tlaukkan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tlaukkan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 11:26:35 by tlaukkan          #+#    #+#             */
-/*   Updated: 2020/01/17 14:53:41 by tlaukkan         ###   ########.fr       */
+/*   Updated: 2020/01/18 10:05:17 by tlaukkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
 
-/*
-** Checks if the hash's edges connects to eachother in the grid
-*/
-
-static int	check_connect(char *block, int i)
+int	check_connect(char *block, int i)
 {
 	int	connect;
 
@@ -32,7 +28,7 @@ static int	check_connect(char *block, int i)
 	return (connect);
 }
 
-static int	check_valid(char *file, int dots, int hash)
+int	check_valid(char *file, int dots, int hash)
 {
 	int connect;
 	int	i;
