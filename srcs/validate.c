@@ -6,7 +6,7 @@
 /*   By: tlaukkan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 11:26:35 by tlaukkan          #+#    #+#             */
-/*   Updated: 2020/01/18 10:05:17 by tlaukkan         ###   ########.fr       */
+/*   Updated: 2020/01/18 22:29:10 by tlaukkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int		save_blocks(t_tetr *tetris)
 				i++;
 			tetris->block[x][l++] = tetris->file[i++];
 		}
-		tetris->block[x][l] = '\0';
+		tetris->block[x][l] = NULL;
 		if (!(check_valid(tetris->block[x], 0, 0)))
 			return (0);
 		x++;
