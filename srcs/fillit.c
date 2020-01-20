@@ -6,7 +6,7 @@
 /*   By: tlaukkan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 10:08:13 by tlaukkan          #+#    #+#             */
-/*   Updated: 2020/01/18 22:29:34 by tlaukkan         ###   ########.fr       */
+/*   Updated: 2020/01/20 07:52:51 by tlaukkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char		*file_reader(int fd)
 	ret = read(fd, buf, BUFF_SIZE);
 	if (ret == 546)
 		return (0);
-	buf[ret] = NULL;
+	buf[ret] = '\0';
 	if (!(file = ft_strdup(buf)))
 		return (0);
 	return (file);
